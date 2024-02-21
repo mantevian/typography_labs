@@ -29,8 +29,11 @@ footer {
 
 blockquote {
 	font-style: italic;
+	font-weight: 500;
+	margin: 1.5em 2em;
+	font-size: 1.0625em;
 }
 
 h2 {
-	margin: 1.25em 0 0.5em 0;
+	margin: 1.75em 0 0.5em 0;
 }
