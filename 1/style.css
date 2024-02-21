@@ -2,7 +2,7 @@
 
 body {
 	margin: auto;
-	width: 80ch;
+	width: min(80ch, 90%);
 	font-family: "Roboto Flex";
 	font-weight: 300;
 	letter-spacing: 0.01em;
@@ -14,7 +14,7 @@ b {
 
 header {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
 	margin: 2em 0 4em 0;
 }
 
