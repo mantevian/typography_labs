@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@font-face {
+	font-family: ConnectionsAndOrder;
+	src: url("./fonts/Connections_and_Order.otf");
+}
+
+@font-face {
+	font-family: Handjet;
+	src: url("./fonts/Handjet-VariableFont.ttf");
+}
+
+@font-face {
+	font-family: VinnytsiaSansBold;
+	src: url("./fonts/VinnytsiaSansBold.ttf");
+}
+
+@font-face {
+	font-family: VinnytsiaSansReg;
+	src: url("./fonts/VinnytsiaSansReg.ttf");
+}
+
+@font-face {
+	font-family: Itim;
+	src: url("./fonts/itimcyrillic.otf");
+}
+
+@font-face {
+	font-family: BainsleyRoman;
+	src: url("./fonts/Bainsley_Roman.otf");
+}
+
+@font-face {
+	font-family: Tuffy;
+	src: url("./fonts/Tuffy-Regular.ttf"), url("./fonts/Tuffy-Italic.ttf");
+}
+
+@font-face {
+	font-family: Neucha;
+	src: url("./fonts/Neucha.ttf");
+}
+
+@font-face {
+	font-family: Bookerly;
+	src: url("./fonts/Bookerly.ttf");
+}
+
+@font-face {
+	font-family: BookerlyLight;
+	src: url("./fonts/BookerlyLight.ttf");
+}
+
+@font-face {
+	font-family: Yokawerad;
+	src: url("./fonts/Yokawerad.otf");
+}
+
+body {
+	margin: auto;
+	width: min(80ch, 90%);
+	font-family: "Roboto Flex";
+	font-weight: 300;
+	letter-spacing: 0.01em;
+	font-size: 1.25rem;
+}
+
+b {
+	font-weight: 500;
+}
+
+header {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+	margin: 2em 0 4em 0;
+}
+
+header > a {
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+	margin: 6em 0 4em 0;
+}
+
+blockquote {
+	font-style: italic;
+	font-weight: 500;
+	margin: 1.5em 2em;
+	font-size: 1.0625em;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	margin: 1.75em 0 0.5em 0;
+}
+
+li {
+	margin-bottom: 0.5em;
+}
