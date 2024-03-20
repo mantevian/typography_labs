@@ -99,6 +99,14 @@ h2 {
 	margin: 1.75em 0 0.5em 0;
 }
 
+h3 {
+	font-size: 1.3em;
+}
+
 li {
 	margin-bottom: 0.5em;
+}
+
+.image {
+	margin: 5em 0;
 }
