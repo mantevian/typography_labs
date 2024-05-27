@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "RobotoFlex";
+    src: url("./roboto_flex.ttf");
+}
+
+body {
+    width: 120ch;
+    margin: auto;
+
+    font-family: "RobotoFlex", sans-serif;
+
+    cursor: crosshair;
+
+    animation: body-start 10s ease-in-out forwards;
+}
+
+h1 {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 160px;
+    font-variation-settings: "wght" 800, "wdth" 100, "opsz" 160, "GRAD" 100, "YTLC" 600;
+
+    letter-spacing: -3rem;
+    line-height: 0.9;
+}
+
+h1 > span {
+    width: min-content;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+h2 {
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 80px;
+    font-variation-settings: "wght" 800, "wdth" 80, "opsz" 80, "GRAD" 80, "YTLC" 700;
+
+    letter-spacing: -2rem;
+    line-height: 1.0;
+
+    scale: 2 1;
+}
+
+h2 > span {
+    width: min-content;
+    height: max-content;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.yellow {
+    color: rgb(255, 200, 10);
+}
+
+.red {
+    color: rgb(255, 67, 10);
+}
+
+.blue {
+    color: rgb(10, 108, 255);
+}
+
+p {
+    line-height: 1.4;
+
+    font-size: 20px;
+    font-variation-settings: "wght" 400, "wdth" 110, "opsz" 20, "GRAD" -50, "YTLC" 480;
+}
+
+b {
+    font-variation-settings: "wght" 400, "wdth" 110, "opsz" 20, "XOPQ" 100, "GRAD" 200, "YTLC" 480;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16em;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4em;
+}
+
+header {
+    height: 80vh;
+    margin: 8em 0;
+
+    display: flex;
+    align-items: end;
+
+    background: linear-gradient(rgba(160, 53, 255, 0.2), rgba(80, 255, 255, 0.2));
+    color: rgba(141, 0, 33, 0.7);
+
+    animation: header-animation 3s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+header > p {
+    height: fit-content;
+    width: 5ch;
+    margin: 0 0 0.5em 0;
+
+    font-variation-settings: "wght" 800, "wdth" 150, "opsz" 80, "XOPQ" 100, "GRAD" 100, "YTLC" 520;
+    letter-spacing: -0.1ch;
+    line-height: 0.5;
+
+    font-size: 240px;
+    overflow-wrap: break-word;
+
+    scale: 1;
+}
+
+@keyframes header-animation {
+    from {
+        width: 100%;
+        height: 80vh;
+    }
+
+    50% {
+        width: 2rem;
+        height: 80vh;
+        color: transparent;
+    }
+
+    to {
+        width: 2rem;
+        height: 2rem;
+        color: transparent;
+    }
+}
+
+@keyframes body-start {
+    from {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    to {
+        height: max-content;
+        overflow: visible;
+    }
+}
+
+main > section > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word {
+    background: rgba(255, 255, 255, 0.15);
+    transition: background 1.5s ease-in-out;
+}
+
+.letter, .link-letter, .synth-letter {
+    transition: background 0.2s ease-in-out;
+}
+
+/*
+.letter:hover {
+    font-size: 1.5em;
+    font-variation-settings: "wdth" 200, "XTRA" 500;
+}
+
+ */
+
+#abstract-art {
+    position: absolute;
+    left: -0.3em;
+    top: 100vh;
+    z-index: -5;
+
+    height: 0;
+
+    font-size: 20vw;
+    line-height: 0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    font-variation-settings: "wght" 700, "wdth" 200, "opsz" 100, "XOPQ" 90, "GRAD" 0, "YTUC" 1, "YTAS" 1;
+
+    color: rgba(142, 255, 255, 0.3);
+
+    scale: 2 1;
+}
+
+img {
+    width: 90%;
+}
