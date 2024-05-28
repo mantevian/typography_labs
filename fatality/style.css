@@ -12,6 +12,8 @@ body {
     cursor: crosshair;
 
     animation: body-start 10s ease-in-out forwards;
+
+    overflow-x: hidden;
 }
 
 h1 {
@@ -81,7 +83,7 @@ b {
 main {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16em;
+    gap: 33vh;
 }
 
 section {
@@ -91,6 +93,8 @@ section {
 }
 
 header {
+    position: relative;
+
     height: 80vh;
     margin: 8em 0;
 
@@ -141,12 +145,12 @@ header > p {
 @keyframes body-start {
     from {
         height: 100vh;
-        overflow: hidden;
+        overflow-y: hidden;
     }
 
     to {
         height: max-content;
-        overflow: visible;
+        overflow-y: visible;
     }
 }
 
@@ -157,12 +161,13 @@ main > section > div {
 }
 
 .word {
+    display: inline-block;
     background: rgba(255, 255, 255, 0.15);
-    transition: background 1.5s ease-in-out;
+    transition: background 1.5s ease-in-out, translate 25s ease-in-out, rotate 25s ease-in-out;
 }
 
 .letter, .link-letter, .synth-letter {
-    transition: background 0.2s ease-in-out;
+    transition: background 0.1s ease-in-out;
 }
 
 /*
@@ -195,4 +200,25 @@ main > section > div {
 
 img {
     width: 90%;
+}
+
+.quote {
+    display: inline-block;
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-variation-settings: "wdth" 150, "slnt" -10, "XOPQ" 50;
+}
+
+.growing-circle {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    backdrop-filter: invert(100%);
+    z-index: 1000;
+
+    border-radius: 100%;
+
+    transition: scale 2s ease-in-out;
 }

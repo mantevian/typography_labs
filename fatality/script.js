@@ -1,6 +1,6 @@
 document.scrollingElement.scrollTop = 0;
 
-let allParagraphs = document.querySelectorAll("main > section > p");
+let allParagraphs = document.querySelectorAll("main > section > p > span");
 
 for (let p of allParagraphs) {
     p.innerHTML = p.textContent.split(/\s+/).map(l => `<span class="word">${l}</span>`).join(" ");
@@ -21,6 +21,47 @@ document.addEventListener("mousemove", (event) => {
     }
 });
 
+let header = document.querySelector("header");
+
+let specialModeEnabled = false;
+setTimeout(() => {
+    header.innerHTML = `<div class="growing-circle"></div>`;
+    header.style.outline = `2px solid black`;
+    header.style.cursor = `pointer`;
+    header.style.alignItems = `center`;
+    header.style.justifyContent = `center`;
+    let circle = document.querySelector(".growing-circle");
+
+    header.addEventListener("click", (event) => {
+        if (specialModeEnabled) {
+            circle.style.scale = `1`;
+
+            for (let w of words) {
+                w.style.transition = `translate 5s ease-in-out`;
+                w.style.translate = `0 0`;
+            }
+
+            setTimeout(() => {
+                for (let w of words) {
+                    w.style.transition = null;
+                }
+                specialModeEnabled = false;
+            }, 5000);
+        }
+        else {
+            circle.style.scale = `3000`;
+
+            for (let w of words) {
+                w.style.transition = `translate 25s ease-in-out`;
+                w.style.translate = `0 ${Math.random() * 10000}px`;
+            }
+
+            specialModeEnabled = true;
+        }
+    });
+
+}, 5000);
+
 setInterval(() => {
     for (let w of words) {
         let r = Math.random() * 255;
@@ -29,7 +70,22 @@ setInterval(() => {
         if (Math.random() < 0.2)
             w.style.background = `rgba(${r}, ${g}, 255, 0.15)`;
         else
-            w.style.background = `rgba(255, 255, 255, 0.15)`
+            w.style.background = `rgba(255, 255, 255, 0.15)`;
+
+        if (!specialModeEnabled) {
+            if (Math.random() < 0.1) {
+                let parentRect = w.parentElement.parentElement.getBoundingClientRect();
+                let wRect = w.getBoundingClientRect();
+                let parentPos = [parentRect.left + parentRect.width / 2, parentRect.top + parentRect.height / 2];
+                let wPos = [wRect.left + wRect.width / 2, wRect.top + wRect.height / 2];
+                let relativePos = [wPos[0] - parentPos[0], wPos[1] - parentPos[1]];
+
+                w.style.translate = `${relativePos[0] * 0.01}px ${relativePos[1] * 0.1}px`;
+            }
+            else if (Math.random() < 0.4) {
+                w.style.translate = `0 0`;
+            }
+        }
     }
 }, 2000);
 
@@ -113,8 +169,7 @@ setInterval(() => {
 
         if (i === currentLinkLetter) {
             l.setAttribute("href", "https://www.wassilykandinsky.ru/");
-        }
-        else {
+        } else {
             l.removeAttribute("href");
         }
 
